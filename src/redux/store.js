@@ -15,10 +15,11 @@ const myReducer = createReducer(100, {
 // 
 export const add = createAction('items/add');
 export const remove = createAction('items/remove')
-
+// IMMER
 const itemsReducer = createReducer([], {
-  [add]: (state, action) => state + action.payload,
-  [remove]: (state, action) => state - action.payload,
+  // [add]: (state, action) => [...state, action.payload,],
+  [add]: (state, action) => state.push(action.payload),
+  [remove]: (state, action) => state.filter(item => item.id !== action.payload),
 });
 // 
 
