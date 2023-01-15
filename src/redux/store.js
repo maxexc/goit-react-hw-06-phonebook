@@ -1,7 +1,8 @@
-import { configureStore, createReducer, createAction } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
+import { createReducer, createAction } from '@reduxjs/toolkit'
 
-const increment = createAction('myValue/increment');
-const decrement = createAction('myValue/increment');
+export const increment = createAction('myValue/increment');
+export const decrement = createAction('myValue/decrement');
 
 console.log(increment.toString());
 
