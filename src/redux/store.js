@@ -1,5 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { createReducer, createAction } from '@reduxjs/toolkit'
+import { configureStore  } from '@reduxjs/toolkit'
+import { createReducer, createAction, createSlice } from '@reduxjs/toolkit'
+
+// make slice
+const mySlice = createSlice({
+  name: "myValue", 
+  initialState: 100, 
+  reducers: {}
+});
+
+
 
 export const increment = createAction('myValue/increment');
 export const decrement = createAction('myValue/decrement');
