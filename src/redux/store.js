@@ -12,8 +12,20 @@ const myReducer = createReducer(100, {
   [decrement]: (state, action) => state - action.payload,
 });
 
+// 
+export const add = createAction('items/add');
+export const remove = createAction('items/remove')
+
+const itemsReducer = createReducer([], {
+  [add]: (state, action) => state + action.payload,
+  [remove]: (state, action) => state - action.payload,
+});
+// 
+
 export const store = configureStore({
   reducer: {
     myValue: myReducer,
+    // 
+    items: itemsReducer,
   },
 })
