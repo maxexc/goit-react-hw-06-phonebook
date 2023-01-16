@@ -4,7 +4,8 @@ import {
   Filterinput, 
 } from './Filter.styled';
 import {useSelector, useDispatch} from 'react-redux';
-import { increment, decrement} from '../../redux/store'
+import { decrement, increment } from 'redux/store';
+// import { increment, decrement} from '../../redux/store'
 
 
 const Filter = ({value, onFilter}) => {
