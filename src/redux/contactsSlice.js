@@ -11,22 +11,13 @@ export const contactsSlise = createSlice({
     reducers: {
       addContact: {
         reducer(state, action) {
-          if (state.find(({ name }) => name === action.payload.name)) {
+          if (state.find(({ name }) => name.toLowerCase() === action.payload.name.toLowerCase())) {
             toast.error(`Name ${action.payload.name} is alredy in contacts!`, {
               position: 'top-right',
             });
             return;
-          }
-  
-          if (state.find(({ number }) => number === action.payload.number)) {
-            toast.error(
-              `Number ${action.payload.number} is alredy in contacts!`,
-              {
-                position: 'top-right',
-              }
-            );
-            return;
-          }
+          }  
+          
           return [...state, action.payload];
         },
         prepare(obj) {
