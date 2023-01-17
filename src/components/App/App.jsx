@@ -6,7 +6,7 @@ import { Container } from './App.styled';
 import  ContactsData from 'components/ContactsData.json'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 
 
@@ -17,7 +17,7 @@ const GET_LS_CONTACTS = JSON.parse(window.localStorage.getItem('contacts'));
 const App = () => {
   const [contacts, setContacts] = useState(GET_LS_CONTACTS ?? ContactsData);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const 
   const [filter, setFilter] = useState('');
   console.log(contacts);
