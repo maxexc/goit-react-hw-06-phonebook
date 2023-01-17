@@ -13,25 +13,27 @@ export const contactsSlise = createSlice({
         reducer(state, action) {
           if (state.find(({ name }) => name.toLowerCase() === action.payload.name.toLowerCase())) {
             toast.error(`Name ${action.payload.name} is alredy in contacts!`, {
-              position: 'top-right',
-            });
+              position: 'top-right' });
             return;
-          }  
-          
+          }
+          toast.success(`${action.payload.name} successfully added in contacts.`, {
+            position: 'top-right' })            
           return [...state, action.payload];
         },
-        prepare(obj) {
+        prepare(name, number) {
           return {
             payload: {
               id: nanoid(),
-              name: obj.name,
-              number: obj.number,
+              name: name,
+              number: number,
             },
           };
         },
       },
       deleteContact(state, action) {
-        return state.filter(item => item.id !== action.payload);
+        state.filter(contact => contact.id !== action.payload);
+        toast.error(`Contact is removed from List.`, { position: 'top-right' })
+        return 
       },
     },
   });
