@@ -38,5 +38,7 @@ export const contactsSlise = createSlice({
     },
   });
   
-  export const { addContact, deleteContact } = contactsSlise.actions;
-  export const contactsReducer = contactsSlise.reducer;
+export const { addContact, deleteContact } = contactsSlise.actions;
+export const contactsReducer = contactsSlise.reducer;
+  
+export const getContacts = state => state.contacts;
