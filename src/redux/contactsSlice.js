@@ -34,7 +34,6 @@ export const contactsSlise = createSlice({
         const index = state.findIndex(contact => contact.id === action.payload);
       state.splice(index, 1);
         // state.filter(contact => contact.id !== action.payload);
-        // console.log(...state);
         
         toast.error(`Contact is removed from List.`, { position: 'top-right' })
         return 
