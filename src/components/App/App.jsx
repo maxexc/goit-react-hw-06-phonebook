@@ -25,6 +25,7 @@ const App = () => {
   const dispatch = useDispatch();
   // const [filter, setFilter] = useState('');
   console.log(contacts);
+  console.log(filter);
 
   useEffect(() => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));

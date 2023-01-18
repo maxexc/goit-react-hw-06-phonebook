@@ -11,6 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { filtersReducer } from './filterSlice';
+import { contactsReducer } from './contactsSlice';
 
 const persistConfig = {
   key: 'root',
@@ -22,7 +23,7 @@ const persistConfig = {
 
 
 const rootReducer = combineReducers({
-  // contacts: contactsReducer,
+  contacts: contactsReducer,
   filter: filtersReducer,
 });
 
