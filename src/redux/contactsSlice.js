@@ -18,7 +18,7 @@ export const contactsSlise = createSlice({
           }
           toast.success(`${action.payload.name} successfully added in contacts.`, {
             position: 'top-right' })            
-          return [...state, action.payload];
+          return [action.payload, ...state];
         },
         prepare(name, number) {
           return {
@@ -31,7 +31,11 @@ export const contactsSlise = createSlice({
         },
       },
       deleteContact(state, action) {
-        state.filter(contact => contact.id !== action.payload);
+        const index = state.findIndex(contact => contact.id === action.payload);
+      state.splice(index, 1);
+        // state.filter(contact => contact.id !== action.payload);
+        // console.log(...state);
+        
         toast.error(`Contact is removed from List.`, { position: 'top-right' })
         return 
       },

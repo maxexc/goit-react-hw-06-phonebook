@@ -25,7 +25,6 @@ const App = () => {
   const dispatch = useDispatch();
   // const [filter, setFilter] = useState('');
   console.log(contacts);
-  console.log(filter);
 
   useEffect(() => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
@@ -57,10 +56,13 @@ const App = () => {
   // }
 
   
-  const handleDelete = selectedId => {
-    dispatch(deleteContact);
+  const handleDelete = event => {
+    console.log(event);
+    dispatch(deleteContact(event));
+    
    }
 
+  //  const handleDelete = selectedId => {
   //   setContacts(
   //     contacts.filter(contact => contact.id !== selectedId),
   //     toast.error(`Contact is removed from List.`)
